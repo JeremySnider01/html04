@@ -14,9 +14,9 @@
 */
 
 /* General Styles */
-  address, article, aside, blockquote, body, cite, 
-  div, dl, dt, dd, em, figcaption, figure, footer, 
-  h1, h2, h3, h4, h5, h6, header, html, img, 
+  address, article, aside, blockquote, body, cite,
+  div, dl, dt, dd, em, figcaption, figure, footer,
+  h1, h2, h3, h4, h5, h6, header, html, img,
   li, main, nav, ol, p, section, span, ul {
     margin: 0;
     padding: 0;
@@ -26,7 +26,7 @@
     background: transparent;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;  
+    box-sizing: border-box;
   }
 
 /* Layout Styles */
@@ -35,23 +35,34 @@
       margin-right: auto;
       min-width: 640px;
       max-width: 960px;
-  }  
+      background-color: white;
+      box-shadow: 1px 0px 10px rgb(51, 51, 51),
+                  -1px 0px 10px rgb(51, 51, 51);
+
+  }
+  html{
+    background-color: rgb(151, 204, 237);
+  }
 
   /* Header Nav Layout */
-    body header nav {
-        clear: both;
-    }
-
     body header nav::after{
-        clear: both;
-        content: "";
-        display: table;
+      clear: both;
+      content: "";
+      display: table;
 
     }
 
     body header nav {
-        padding-left: 5%;
-        padding-right: 5%;
+      clear: both;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-bottom: 10px;
+      background: linear-gradient(lightcoral 33%, white 100%);
+      margin-bottom: 10px;
+    }
+
+    body header nav ul {
+      padding-top: 10px;
     }
 
     body > header > nav ul {
@@ -65,39 +76,102 @@
         width: 18.5%;
         margin-left: 5px;
         margin-right: 5px;
+        color: black;
+        text-align: center;
+        text-shadow: 1px 0px 1px black;
     }
-    
+
   /* Section Nav Images Layout */
     body section nav {
       clear:both;
       float: left;
       width: 100%;
     }
-    
+
     body section nav::after {
       clear:both;
       content: "";
       display: table;
     }
-    
+
     body section nav ul li a {
         text-decoration: none;
         display: block;
         float: left;
         width: 12.5%
     }
-    
+
     body section nav ul li a img {
       width: 100%;
     }
-    
+
   /* Article Layout */
     body section article {
       clear: both;
     }
-    
+
+  article p {
+    padding-bottom: 10px;
+    padding-top: 5px;
+    line-height: 2em;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+
 /* Image Styles */
   header img {
       width: 100%;
-      background: url(br_paper.png) 100%;
+      transform: rotateX(30deg);
+      filter: brightness(0);
   }
+
+  header {
+    background: url(br_paper.png) 100%;
+  }
+
+  ul li img {
+    padding: 5px;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+  }
+
+  ul li img:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+
+  div.column-1-2 img {
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+/* Left Sidebar Styles */
+div.column-1-1 {
+  padding-left: 10px;
+  border: 2px lightcoral solid;
+  border-radius: 10px;
+  background: radial-gradient(white 30% , mistyrose)
+}
+div.column-1-1 li {
+  padding-top: 13%;
+  padding-bottom: 14%;
+  text-align: left;
+  padding-left: 5px
+}
+
+div.column-1-1 li a {
+  color: black;
+}
+
+div.column-1-1 li a:hover {
+  color: rgb(151, 204, 237);
+}
+
+/* Right Sidebar Styles*/
+div.column-1-3 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
